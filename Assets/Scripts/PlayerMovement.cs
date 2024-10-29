@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Vector3 input;
     private bool isMoving;
+    private bool isGrounded;
 
     void Start()
     {
@@ -19,15 +20,16 @@ public class PlayerMovement : MonoBehaviour
         animations = GetComponentInChildren<PlayerAnimations>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
-        if (Input.GetKeyDown(KeyCode.Space)) Jump();
+        Jump();
     }
     void Move()
     {
-        input = new Vector2(Input.GetAxis("Horizontal"), 0);
-        transform.position += input * speed * Time.deltaTime;
+        input = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
+        transform.Translate(speed * input * Time.fixedDeltaTime);
+
 
         isMoving = input.x != 0 ? true : false;
         if (isMoving) playerSprite.flipX = input.x > 0 ? false : true;
@@ -36,7 +38,31 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        Debug.Log("Jump");
-        rigidbody.AddForce(transform.up * jumpForce);
+        if (Input.GetAxis("Jump") > 0)
+        {
+            if (isGrounded)
+            {
+                rigidbody.AddForce(Vector3.up * jumpForce);
+            }
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        IsGroundedUpate(collision, false);
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        IsGroundedUpate(collision, true);
+    }
+
+
+    private void IsGroundedUpate(Collision2D collision, bool value)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = value;
+        }
     }
 }

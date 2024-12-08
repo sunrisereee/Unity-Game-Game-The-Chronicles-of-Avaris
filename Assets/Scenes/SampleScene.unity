@@ -414,7 +414,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 788729845
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -3145328045451892686, guid: 5b33f813ee794dd49b20e6fe26e557e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -510,8 +510,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 2.0584176, y: 0.25432646}
-  m_Size: {x: 1.7996793, y: 2.4694006}
+  m_Offset: {x: 2.1, y: 0.25432646}
+  m_Size: {x: 1.96, y: 2.4694006}
   m_Direction: 0
 --- !u!50 &161859275
 Rigidbody2D:
@@ -571,6 +571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   jumpForce: 300
+  attackPoint: {fileID: 129490832}
 --- !u!1 &205334829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1643,7 @@ GameObject:
   - component: {fileID: 2107022848}
   - component: {fileID: 2107022847}
   - component: {fileID: 2107022849}
+  - component: {fileID: 2107022850}
   m_Layer: 6
   m_Name: Mob
   m_TagString: Untagged
@@ -1728,6 +1730,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2107022850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107022846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f53132e1549d54eaf04c3d2b652cd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

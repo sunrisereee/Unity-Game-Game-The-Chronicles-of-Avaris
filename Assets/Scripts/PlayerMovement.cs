@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
+    [SerializeField] Transform attackPoint;
 
     private SpriteRenderer playerSprite;
     private Rigidbody2D rigidbody;
@@ -32,7 +33,12 @@ public class PlayerMovement : MonoBehaviour
 
 
         isMoving = input.x != 0 ? true : false;
-        if (isMoving) playerSprite.flipX = input.x > 0 ? false : true;
+        if (isMoving)
+        {
+            playerSprite.flipX = input.x < 0;
+            var offset = new Vector3(input.x > 0 ? 2.5f : 1f, 0.2f, 0);
+            attackPoint.localPosition = offset;
+        }
         animations.IsMoving= isMoving;
     }
 

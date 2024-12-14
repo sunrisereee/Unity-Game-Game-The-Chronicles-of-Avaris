@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      backgroundGameImage_waifu2x_0: -3931964899356417165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -45,6 +45,9 @@ TagManager:
   - name: BG
     uniqueID: 3760201343
     locked: 0
+  - name: BFO
+    uniqueID: 223624751
+    locked: 0
   - name: Player
     uniqueID: 788729845
     locked: 0

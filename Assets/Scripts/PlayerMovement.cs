@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -69,6 +70,19 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = value;
+        }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "NextScene")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (collision.gameObject.tag == "exitgame")
+        {
+            Application.Quit();
         }
     }
 }

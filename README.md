@@ -1,5 +1,5 @@
 # Unity-Game-Game-The-Chronicles-of-Avaris
 The Chronicles of Avaris
 
-Презентация - https://docs.google.com/presentation/d/1bSZOeYfTmwIrYf1p-5P6sWMGUw8ZE6yK/edit?usp=sharing&ouid=100804210883947232419&rtpof=true&sd=true
+Презентация - https://docs.google.com/presentation/d/1JIjwHNE2NX5sOHdgCdvWCwbAF54MGZs64L_Qa-TUwho/edit?usp=sharing
 Build - https://sunriseee.itch.io/chronicles-of-avaris
